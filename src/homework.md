@@ -1,0 +1,7 @@
+- create a repository.
+- initialize the repository.
+- Install express.
+- create a server.
+- listen to port 7777.
+- Write request handler for /test, /hello.
+- Install nodemon and update scripts inside package.json.
