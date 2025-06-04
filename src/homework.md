@@ -16,4 +16,6 @@
 - use of regex in routes.
 - Reading the dynamic routes.
 - Multiple route handlers.
+- What is MIddleware.why do we need it
+- How expressjs basically handles requests behind the scene.
 
