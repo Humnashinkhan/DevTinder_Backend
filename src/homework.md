@@ -15,3 +15,5 @@
 - explore routing and use of ?,+, (), * in the routes.
 - use of regex in routes.
 - Reading the dynamic routes.
+- Multiple route handlers.
+
