@@ -19,3 +19,4 @@
 - What is MIddleware.why do we need it
 - How expressjs basically handles requests behind the scene.
 
+- Error hndling using app.use.
