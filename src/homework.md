@@ -20,3 +20,9 @@
 - How expressjs basically handles requests behind the scene.
 
 - Error hndling using app.use.
+- Go to MongoDB website, create a free MO Cluster.
+- Create a user, Get a connection String.
+- Install MongoDB Campass.
+- Install Mongoose library then you have connect the application to the database.
+- Call the connectDB function and connect to database before starting the application on 7777.
+
