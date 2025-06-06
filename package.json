@@ -8,7 +8,7 @@
   ],
   "license": "ISC",
   "author": "Humnashin Khan",
-  "type": "commonjs",
+  "type":  "commonjs",
   "main": "index.js",
   "scripts": {
     "start": "node src/app.js",

@@ -25,4 +25,8 @@
 - Install MongoDB Campass.
 - Install Mongoose library then you have connect the application to the database.
 - Call the connectDB function and connect to database before starting the application on 7777.
+- create a user schema and usr model.
+- create Post /signup API to add data to database.
+- Error handling using try and catch.
+
 
