@@ -35,4 +35,5 @@
 - Make your signup API dynamic to recieve the data from the end user.
 - API - Get user by email.
 - API - Feed Api - GET/feed - get all the users from the database.
+- Create a delete user API.
 
