@@ -36,4 +36,5 @@
 - API - Get user by email.
 - API - Feed Api - GET/feed - get all the users from the database.
 - Create a delete user API.
-
+- Create a update User API.
+- 
