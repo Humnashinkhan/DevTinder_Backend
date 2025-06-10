@@ -42,4 +42,7 @@
 - Add default value.
 - Create a custom validate function for the gender.
 - Improve the DB schema.
+- Add timstamp to user schema.
+- Install validator.
+- Explore validator library.
 

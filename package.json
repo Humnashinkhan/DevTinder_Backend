@@ -8,7 +8,7 @@
   ],
   "license": "ISC",
   "author": "Humnashin Khan",
-  "type":  "commonjs",
+  "type": "commonjs",
   "main": "index.js",
   "scripts": {
     "start": "node src/app.js",
@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "express": "^5.1.0",
-    "mongoose": "^8.15.1"
+    "mongoose": "^8.15.1",
+    "validator": "^13.15.15"
   }
 }
