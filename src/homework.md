@@ -37,4 +37,9 @@
 - API - Feed Api - GET/feed - get all the users from the database.
 - Create a delete user API.
 - Create a update User API.
-- 
+- Explore schema type options from the documentation.
+- Add require, unique, lower,trim, min, minLength.
+- Add default value.
+- Create a custom validate function for the gender.
+- Improve the DB schema.
+
