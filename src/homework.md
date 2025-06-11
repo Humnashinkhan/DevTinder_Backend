@@ -43,6 +43,8 @@
 - Create a custom validate function for the gender.
 - Improve the DB schema.
 - Add timstamp to user schema.
+- Add API level validation on Patch request and signup post API.
+_Add API validation for each field.
 - Install validator.
 - Explore validator library.
 

@@ -8,6 +8,9 @@ const app = express();
 app.use(express.json());
 
 app.post("/signup", async (req, res) => {
+  // Validation of data.
+  // Encrypt the password.
+
   //creating a new instance of the user model.
   const user = new User(req.body);
   try {
@@ -55,14 +58,35 @@ app.delete("/user", async (req, res) => {
 });
 
 //Update data of the User.
-app.patch("/user", async (req, res) => {
-  const userId = req.body.userId;
+app.patch("/user/:userId", async (req, res) => {
+  const userId = req.params?.userId;
   const data = req.body;
+
+  const ALLOWED_UPDATES = [
+    "photoURL",
+    "about",
+    "gender",
+    "age",
+    "skills",
+  ];
+
+  const isUpdateAllowed = Object.keys(data).every((k) =>
+    ALLOWED_UPDATES.includes(k)
+  );
+  if(!isUpdateAllowed){
+    throw new Error("Update Not Allowed");
+  }
+  if(data?.skills.length > 10){
+    throw new Error("Skills can not be more than 10");
+  }
   try {
-    await User.findByIdAndUpdate({ _id: userId }, data);
+    const user = await User.findByIdAndUpdate({ _id: userId }, data, {
+      returnDocument: "after",
+      runValidators: "true",
+    });
     res.send("User Updated Successfully!!");
   } catch (err) {
-    res.status(400).send("Something Went Wrong");
+    res.status(400).send("UPDATE FAILED:" + err.message);
   }
 });
 
