@@ -7,7 +7,7 @@ const app = express();
 
 //Middleware and it is activated for all the routes.
 app.use(express.json());
-
+// SignUp API.
 app.post("/signup", async (req, res) => {
   // Validation of data. write some code to validate.
   try {
@@ -31,6 +31,30 @@ app.post("/signup", async (req, res) => {
   }
 });
 
+
+//login API.
+app.post("/login", async (req, res) => {
+    try{
+      const { emailId, password } = req.body;
+
+      const user = await User.findOne({ emailId: emailId });
+       if(!user) {
+        throw new Error("Invalid Credential!!");
+       }
+       const isPasswordValid = await bcrypt.compare(password, user.password);
+         if(isPasswordValid) {
+            res.send("Login successfull!!!");
+         }
+         else{
+          throw new Error("Invalid Credential!!");
+         }
+    }catch (err) {
+    res.status(400).send("ERROR:" + err.message);
+  }
+});
+
+
+
 //Get user By Email.
 app.get("/user", async (req, res) => {
   const userEmail = req.body.emailId;
@@ -46,6 +70,7 @@ app.get("/user", async (req, res) => {
   }
 });
 
+
 //Feed API  -GET/feed - get all the users from the database.
 app.get("/feed", async (req, res) => {
   try {
@@ -55,6 +80,8 @@ app.get("/feed", async (req, res) => {
     res.status(400).send("Something Went Wrong");
   }
 });
+
+
 
 //Delete a user from the database.
 app.delete("/user", async (req, res) => {
@@ -66,6 +93,8 @@ app.delete("/user", async (req, res) => {
     res.status(400).send("Something Went Wrong");
   }
 });
+
+
 
 //Update data of the User.
 app.patch("/user/:userId", async (req, res) => {

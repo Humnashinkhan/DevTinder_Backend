@@ -51,5 +51,6 @@ _Add API validation for each field.
 - validate data in signup API.
 - Install Bcrypt Package.
 - create a passwordHash using bcrypt.hash and save the user is excrupted password .
-
+- Create Login API.
+- Compare passwords and throw errors if email and password is Invalid.
 
