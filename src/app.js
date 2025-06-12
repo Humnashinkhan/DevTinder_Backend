@@ -7,6 +7,7 @@ const app = express();
 
 //Middleware and it is activated for all the routes.
 app.use(express.json());
+// app.use(cookieParser());
 // SignUp API.
 app.post("/signup", async (req, res) => {
   // Validation of data. write some code to validate.
@@ -53,6 +54,13 @@ app.post("/login", async (req, res) => {
   }
 });
 
+//Profile API.
+app.get("/profile", async (req, res) => {
+
+    //  const cookies = req.cookies;
+    //  console.log(cookies);
+    //  res.send("Reading Cookie!");
+})
 
 
 //Get user By Email.
