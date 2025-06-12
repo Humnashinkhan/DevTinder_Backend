@@ -46,5 +46,10 @@
 - Add API level validation on Patch request and signup post API.
 _Add API validation for each field.
 - Install validator.
-- Explore validator library.
+- Explore validator library function and use validator function for password, email, pgotoURL.
+- NEVER TRUST req.body.
+- validate data in signup API.
+- Install Bcrypt Package.
+- create a passwordHash using bcrypt.hash and save the user is excrupted password .
+
 

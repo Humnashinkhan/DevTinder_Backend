@@ -1,23 +1,33 @@
 const express = require("express");
 const connectDB = require("./config/database");
 const User = require("./models/user");
-
+const { validateSignUpData } = require("./utils/validation");
+const bcrypt = require("bcrypt");
 const app = express();
 
 //Middleware and it is activated for all the routes.
 app.use(express.json());
 
 app.post("/signup", async (req, res) => {
-  // Validation of data.
-  // Encrypt the password.
-
-  //creating a new instance of the user model.
-  const user = new User(req.body);
+  // Validation of data. write some code to validate.
   try {
+    validateSignUpData(req);
+    const {firstName, lastName, emailId, password } = req.body;
+    // Encrypt the password.
+    const passwordHash = await bcrypt.hash(password, 10);
+
+    //creating a new instance of the user model.
+    const user = new User({
+      firstName,
+      lastName,
+      emailId,
+      password: passwordHash,
+    });
+
     await user.save();
     res.send("User Added Successfully!!");
   } catch (err) {
-    res.status(400).send("Error saving the User:" + err.message);
+    res.status(400).send("ERROR:" + err.message);
   }
 });
 
@@ -62,21 +72,15 @@ app.patch("/user/:userId", async (req, res) => {
   const userId = req.params?.userId;
   const data = req.body;
 
-  const ALLOWED_UPDATES = [
-    "photoURL",
-    "about",
-    "gender",
-    "age",
-    "skills",
-  ];
+  const ALLOWED_UPDATES = ["photoURL", "about", "gender", "age", "skills"];
 
   const isUpdateAllowed = Object.keys(data).every((k) =>
     ALLOWED_UPDATES.includes(k)
   );
-  if(!isUpdateAllowed){
+  if (!isUpdateAllowed) {
     throw new Error("Update Not Allowed");
   }
-  if(data?.skills.length > 10){
+  if (data?.skills.length > 10) {
     throw new Error("Skills can not be more than 10");
   }
   try {
