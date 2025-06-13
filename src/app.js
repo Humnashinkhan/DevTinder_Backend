@@ -4,10 +4,13 @@ const User = require("./models/user");
 const { validateSignUpData } = require("./utils/validation");
 const bcrypt = require("bcrypt");
 const app = express();
+const cookieParser = require("cookie-parser");
+const jwt = require("jsonwebtoken");
 
 //Middleware and it is activated for all the routes.
 app.use(express.json());
-// app.use(cookieParser());
+app.use(cookieParser());
+
 // SignUp API.
 app.post("/signup", async (req, res) => {
   // Validation of data. write some code to validate.
@@ -44,6 +47,10 @@ app.post("/login", async (req, res) => {
        }
        const isPasswordValid = await bcrypt.compare(password, user.password);
          if(isPasswordValid) {
+
+         // Create a jwt token.
+         // Add the token to cookie and send the response back to the user.
+            res.cookie("token" ,"ghthtgdgdfhryhertgtyergrt");
             res.send("Login successfull!!!");
          }
          else{
@@ -57,9 +64,12 @@ app.post("/login", async (req, res) => {
 //Profile API.
 app.get("/profile", async (req, res) => {
 
-    //  const cookies = req.cookies;
-    //  console.log(cookies);
-    //  res.send("Reading Cookie!");
+      const cookies = req.cookies;
+      const {token} = cookies;
+      //validate my token.
+    
+      console.log(cookies);
+      res.send("Reading Cookie!");
 })
 
 
