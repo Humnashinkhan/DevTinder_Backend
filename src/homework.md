@@ -54,3 +54,9 @@ _Add API validation for each field.
 - Create Login API.
 - Compare passwords and throw errors if email and password is Invalid.
 
+- install cookie-parser.
+- Just send a dummy cookie to user.
+- Create GET/profile API and check if you get the cookie back.
+- install JSON web token.
+- In login API after email and password validation, Create a jwt token and send it back to the user cookie.
+- read the cookie inside your profile API and find the logged in user.
