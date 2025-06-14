@@ -60,3 +60,7 @@ _Add API validation for each field.
 - install JSON web token.
 - In login API after email and password validation, Create a jwt token and send it back to the user cookie.
 - read the cookie inside your profile API and find the logged in user.
+
+- Write userAuth middleware.
+- Add the userAuth middleware in profile API and a new sendConnectionRequest API.
+- Set the expiry of jwt token and cookies to 7 days.

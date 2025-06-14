@@ -49,11 +49,16 @@ app.post("/login", async (req, res) => {
     if (isPasswordValid) {
       // Create a jwt token.
 
-      const token = await jwt.sign({ _id: user._id }, "DEV@Tinder$55");
+      const token = await jwt.sign({ _id: user._id }, "DEV@Tinder$55", {
+        expiresIn: "1d",
+
+      });
       console.log(token);
 
       // Add the token to cookie and send the response back to the user.
-      res.cookie("token", token);
+      res.cookie("token", token,{
+        expires: new Date(Date.now() + 8 * 3600000),
+      });
       res.send("Login successfull!!!");
     } else {
       throw new Error("Invalid Credential!!");
@@ -73,6 +78,14 @@ app.get("/profile", userAuth, async (req, res) => {
     res.status(400).send("ERROR:" + err.message);
   }
 });
+
+// Send Connection Request API.
+app.post("/sendConnectionRequest", userAuth, async (req, res) => {
+  const user = req.user;
+  // Sending a COnnection Request.
+  console.log("Sending a Connection Request!");
+  res.send( user.firstName + "Connection Request Send!");
+})
 
 
 
