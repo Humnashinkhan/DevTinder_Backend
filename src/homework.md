@@ -64,3 +64,7 @@ _Add API validation for each field.
 - Write userAuth middleware.
 - Add the userAuth middleware in profile API and a new sendConnectionRequest API.
 - Set the expiry of jwt token and cookies to 7 days.
+
+- create userSchema method to getJWT.
+- create userSchema method to comparePassword(passwordInputByUser).
+ 
