@@ -75,4 +75,6 @@ _Add API validation for each field.
  - Creates routes folder for managing, auth, profile, request routers.
  - Create authRouter, profileRouter, requestRouter.
  - Import these router in app.js.
- - Create Logout API.
+ - Create POST /logout API.
+ - Create PATCH /profile/edit API.
+ - Create PATCH /profile/password API => forgot password api.
