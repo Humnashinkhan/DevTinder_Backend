@@ -67,4 +67,12 @@ _Add API validation for each field.
 
 - create userSchema method to getJWT.
 - create userSchema method to comparePassword(passwordInputByUser).
+
+ - Explore Tinder APIs.
+ - Create a list all api you can think of in devTinder.
+ - Group Multiple routes under respective routers.
+ - Read documentaion for express.Router.
+ - Creates routes folder for managing, auth, profile, request routers.
+ - Create authRouter, profileRouter, requestRouter.
+ - Import these router in app.js.
  
