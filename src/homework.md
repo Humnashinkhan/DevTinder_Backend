@@ -78,3 +78,15 @@ _Add API validation for each field.
  - Create POST /logout API.
  - Create PATCH /profile/edit API.
  - Create PATCH /profile/password API => forgot password api.
+
+
+- create connection Request schema.
+- Send connection Request API.
+- Proper Validation of data.
+- $or query $and query in mongoose, Read more about it.
+- Created Schema.pre("save") function.
+
+ 
+ - Read the article about compound Indexes.
+ - Why do we need index in DB.
+ - What is the advantage and disadvantage of creating an index.
