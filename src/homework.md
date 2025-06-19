@@ -90,3 +90,5 @@ _Add API validation for each field.
  - Read the article about compound Indexes.
  - Why do we need index in DB.
  - What is the advantage and disadvantage of creating an index.
+
+- ALWAYS THINK ABOUT CORNER CASES,
