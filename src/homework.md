@@ -94,3 +94,6 @@ _Add API validation for each field.
 - ALWAYS THINK ABOUT CORNER CASES,
 
 - Write code with proper validation for POST /request/review/:status/:requestId API.
+
+- Thought Process - GET vs POST
+- 
