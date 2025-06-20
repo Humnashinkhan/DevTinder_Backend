@@ -96,4 +96,5 @@ _Add API validation for each field.
 - Write code with proper validation for POST /request/review/:status/:requestId API.
 
 - Thought Process - GET vs POST
-- 
+- create GET/user/requests/received API - with all checks 
+- Create GET/user/Connections API.
