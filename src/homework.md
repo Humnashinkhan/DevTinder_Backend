@@ -103,7 +103,7 @@ _Add API validation for each field.
 - Explore $nin, $and , $ne and oyher queries .
 
 
-# Pagination.
+# Pagination Notes.
 
 - /feed?page=1&limit=10 => 1 to 10 - .skip(0) - .limit(10)
 
@@ -116,4 +116,4 @@ _Add API validation for each field.
 2)  .limit() - how many documents do you want. 
 
 there is a formula to calculate the skip
-.skip() = (page-1)*limit;
+- skip = (page-1)*limit;
