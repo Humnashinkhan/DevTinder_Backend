@@ -98,3 +98,22 @@ _Add API validation for each field.
 - Thought Process - GET vs POST
 - create GET/user/requests/received API - with all checks 
 - Create GET/user/Connections API.
+
+- you have to write the logic of GET/feed API.
+- Explore $nin, $and , $ne and oyher queries .
+
+
+# Pagination.
+
+- /feed?page=1&limit=10 => 1 to 10 - .skip(0) - .limit(10)
+
+- /feed?page=2&limit=20 => 11 to 20.  .skip(10) - .limit(10)
+- /feed?page=3&limit=30 => 21 to  30.  .skip(20) - .limit(10)
+
+- In MongoDb there is two function.
+
+1)  .skip() - skip means how many documents do you skip from the starting.
+2)  .limit() - how many documents do you want. 
+
+there is a formula to calculate the skip
+.skip() = (page-1)*limit;
