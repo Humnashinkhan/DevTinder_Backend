@@ -17,7 +17,7 @@ const validateSignUpData = (req) => {
     "firstName",
     "lastName",
     "emailId",
-    "photoURL",
+    "photoUrl",
     "about",
     "age",
     "gender",
